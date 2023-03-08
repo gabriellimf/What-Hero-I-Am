@@ -9,11 +9,6 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use(cors());
 
-server.get('/hero', async (req: Request, res: Response) => {
-    const scriptHero = await script.getHeroesFromApi();
-    res.send(scriptHero);
-});
-
 server.post('/hero', async (req: Request, res: Response) => {
     const data = req.body;
     const scriptHero = await script.getHeroesFromApi();

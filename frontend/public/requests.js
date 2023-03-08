@@ -1,4 +1,4 @@
-async function request({ url, method = 'GET', body = {} }) {
+async function request({ url, method = 'POST', body = {} }) {
   const response = await fetch(url, {
     method,
     headers: {
@@ -6,9 +6,6 @@ async function request({ url, method = 'GET', body = {} }) {
     },
     body: JSON.stringify(body),
   });
-  if (response.ok == false) {
-    throw new Error(`Requisicao falhou com o status ${response.status}`);
-  }
   return response.json(); 
 };
 
@@ -20,9 +17,7 @@ async function generateHero() {
     biography: true,
     work: true,
     connections: true,
-    images: {
-      md: true
-    }
+    images: true
   };
     const result = await request({
       url: 'http://localhost:3000/hero',
