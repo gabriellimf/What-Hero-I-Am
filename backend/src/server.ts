@@ -15,11 +15,6 @@ server.post('/hero', async (req: Request, res: Response) => {
     res.send(scriptHero);
 });
 
-server.get('/villain', async (req: Request, res: Response) => {
-    const scriptVillain = await script.getVillainsFromApi();
-    res.send(scriptVillain);
-});
-
 server.use((req: Request, res: Response) => {
   res.status(404).send('Página não encontrado');
 });

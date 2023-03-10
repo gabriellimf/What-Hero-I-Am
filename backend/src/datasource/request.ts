@@ -9,10 +9,6 @@ const options = {
 };
 
 export default class Requests {
-    async getVillains(){
-        const resultVillains = await axios.get('https://superhero-search.p.rapidapi.com/api/villains', options)
-        return resultVillains.data;
-    }
     
     async getHeroes(){
         const resultHeroes = await axios.get('https://superhero-search.p.rapidapi.com/api/heroes', options)
